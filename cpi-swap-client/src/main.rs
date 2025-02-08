@@ -155,6 +155,7 @@ async fn main() {
     instruction_data.serialize(&mut serialized_data).unwrap();
 
     let mut accounts = vec![
+        AccountMeta::new(keypair.pubkey(), true),
         AccountMeta::new_readonly(INPUT_MINT, false), // input mint
         AccountMeta::new_readonly(TOKEN_PROGRAM_ID, false), // input mint program (for now, just hardcoded to SPL and not SPL 2022)
         AccountMeta::new_readonly(OUTPUT_MINT, false),      // output mint
